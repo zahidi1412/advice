@@ -1,0 +1,52 @@
+// ### Primary
+
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+
+// ### Neutral
+
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayish:hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+
+// ## Typography
+
+// ### Body Copy
+
+$quote: 28px;
+
+// ### Font
+
+@import url(https://fonts.google.com/specimen/Manrope);
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    border:0;
+    font-weight: 800;
+    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+    background-color: $DarkBlue;
+}
+
+.container{
+    position: fixed;
+        width: 400px;
+        height: 250px;
+        padding: 30px;
+        background-color: $DarkGrayish;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius:4%;
+        h3{
+            background-color: $DarkGrayish;
+            color: $NeonGreen;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p{
+            color: $LightCyan;
+            font-size: $quote;
+        }
+}

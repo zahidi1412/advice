@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <title>Frontend Mentor | Advice generator app</title>
+
+  
+</head>
+<body>
+  <div id="advic" class="container">
+    <h3>Advice #</h3><h3></h3><!-- Advice ID goes here -->
+
+  "<p class="main"></p><!-- Advice text goes here -->"
+  <button id="runScript" onclick="getMeth()">Get Method</button>
+  </div>
+
+  <script type="text/javascript">
+    const advi =document.querySelector('.container')
+    function get(){
+      getData(
+        "https://62bfe6a7c134cf51cec5c6b0.mockapi.io/fke"
+      ).then((data) =>{
+        document.getElementsByClassName("container").innerHTML = JSON.stringify(data);
+      })
+    }
+    get();
+
+    async function getData(url){
+      const response= await fetch(url,{
+        method : "GET",
+        headers: { "Content-Type": "application/json"},
+        mode: "cors",
+      });
+      return response.json();
+    }
+    function getMeth(){
+      getData("https://62bfe6a7c134cf51cec5c6b0.mockapi.io/fke").then((data) => {
+       var bod = JSON.parse(data);
+       console.log(bod.advice);
+      });         
+    }
+  </script>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

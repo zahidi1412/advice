@@ -26,19 +26,51 @@ $quote: 28px;
     font-weight: 800;
     font-family: 'Manrope', sans-serif;
     scroll-behavior: smooth;
-    background-color: $DarkBlue;
+    // background-color: $DarkBlue;
 }
 
+.main{
+    top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $DarkBlue;
+  position: absolute;
+  z-index: -2;
+}
+
+.btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 0;
+    background-color: $NeonGreen;
+    text-align: center;
+    display: inline-block;
+    position: fixed;
+    left: 50%;
+    bottom: -70px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    transition: all 0.2s ease-in-out;
+    :hover{
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 80px 15px rgba(145, 92, 182, .4);
+        cursor: pointer;
+    }
+}
 .container{
     position: fixed;
-        width: 400px;
-        height: 250px;
+        width: 500px;
+        height: 350px;
         padding: 30px;
         background-color: $DarkGrayish;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius:4%;
+        display: block;
+        text-align: center;
         h3{
             background-color: $DarkGrayish;
             color: $NeonGreen;
@@ -48,5 +80,13 @@ $quote: 28px;
         p{
             color: $LightCyan;
             font-size: $quote;
+        }
+        .divider{
+            
+            left: 50%;
+            bottom: 70px;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            position: absolute;
         }
 }

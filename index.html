@@ -7,19 +7,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="style/style.css">
   <title>Frontend Mentor | Advice generator app</title>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   
 </head>
 <body>
   <div class="main">
-    <div id="advic" class="container">
-      <h3>Advice #</h3><h3></h3><!-- Advice ID goes here -->
+    <div id="advi" class="container">
+      <h3>Advice #</h3><h3 class="id"></h3><!-- Advice ID goes here -->
   
-      "<p ></p><!-- Advice text goes here -->"
+      "<p class="adv"></p><!-- Advice text goes here -->"
       <div class="divider">
-        <svg width="444" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z"/><g transform="translate(212)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg>
+        <svg viewbox= "0 0 444 16" width="200" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z"/><g transform="translate(212)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg>
       </div>
-      <button class="btn" id="runScript" onclick="getMeth()">
+      <button class="btn" onclick="advButton()" >
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#202733"/></svg>
       </button>
     </div>
@@ -27,30 +27,56 @@
   
 
   <script type="text/javascript">
-    const advi =document.querySelector('.container')
-    function get(){
-      getData(
-        "https://62bfe6a7c134cf51cec5c6b0.mockapi.io/fke"
-      ).then((data) =>{
-        document.getElementsByClassName("container").innerHTML = JSON.stringify(data);
-      })
-    }
-    get();
+      var url= "https://62bfe6a7c134cf51cec5c6b0.mockapi.io/fke";
+      var advic = new Array();
+      let currIndex = 1;
+      let currId = advic.id;
+      let currAdv = advic.advice;
+      
+      
 
-    async function getData(url){
-      const response= await fetch(url,{
-        method : "GET",
-        headers: { "Content-Type": "application/json"},
-        mode: "cors",
+     
+      function getAjax(callback){
+        $.ajax({
+        method: "GET",
+        dataType : 'json',
+        async: false,
+        cache: false,
+        url: url,
+        success: callback,
+        error: function(error){
+          console.log("TOLOL!!!!");
+          
+        }
       });
-      return response.json();
-    }
-    function getMeth(){
-      getData("https://62bfe6a7c134cf51cec5c6b0.mockapi.io/fke").then((data) => {
-       var bod = JSON.parse(data);
-       console.log(bod.advice);
-      });         
-    }
+      }
+      getAjax(function(resp){
+        advic.push(...resp);
+        // advic = JSON.parse(resp);
+      });
+      // function disp(){
+       
+      //   document.querySelector('.id').innerHTML = advic[0].id;
+      // document.querySelector('.adv').innerHTML = currAdv[1].id;
+      // }
+      
+     
+     
+      cont(currId, currAdv);
+
+      function advButton(i = true){
+        currIndex = (currIndex + (i ? 1 : -1)+ advic.length) % advic.length;
+        currAdv = advic[currIndex].advice;
+        currId = advic[currIndex].id;
+        cont(currId, currAdv);
+      }
+
+      function cont(currId, currAdv){
+      document.querySelector('.id').innerHTML = currId;
+      document.querySelector('.adv').innerHTML = currAdv;
+  
+      }
+       
   </script>
   
   <div class="attribution">

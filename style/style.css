@@ -36,7 +36,7 @@
 }
 .btn :hover {
   color: rgb(255, 255, 255);
-  box-shadow: 0 80px 15px rgba(145, 92, 182, 0.4);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.25);
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
   text-align: center;
   text-transform: uppercase;
 }
-.container p {
+.container .adv {
   color: hsl(193deg, 38%, 86%);
   font-size: 28px;
 }
@@ -69,6 +69,23 @@
   transform: translate(-50%, -50%);
   margin: 0 auto;
   position: absolute;
+}
+
+@media only screen and (min-width: 500px) {
+  .container {
+    position: fixed;
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+  }
+  .container svg {
+    width: 150px;
+    left: 50%;
+    bottom: 70px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    position: absolute;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

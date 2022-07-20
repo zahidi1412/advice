@@ -55,7 +55,8 @@ $quote: 28px;
     transition: all 0.2s ease-in-out;
     :hover{
         color: rgba(255, 255, 255, 1);
-        box-shadow: 0 80px 15px rgba(145, 92, 182, .4);
+        box-shadow:
+		inset 1px 1px 0px rgba(255,255,255,0.25);
         cursor: pointer;
     }
 }
@@ -77,7 +78,7 @@ $quote: 28px;
             text-align: center;
             text-transform: uppercase;
         }
-        p{
+        .adv{
             color: $LightCyan;
             font-size: $quote;
         }
@@ -89,4 +90,22 @@ $quote: 28px;
             margin: 0 auto;
             position: absolute;
         }
+}
+
+@media only screen and (min-width: 500px) {
+    .container{
+        position: fixed;
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            
+            svg{
+                width: 150px;
+                left: 50%;
+                bottom: 70px;
+                transform: translate(-50%, -50%);
+                margin: 0 auto;
+                position: absolute;
+            }
+    }
 }

@@ -61,10 +61,6 @@ $quote: 28px;
     }
 }
 .container{
-    position: fixed;
-        width: 500px;
-        height: 350px;
-        padding: 30px;
         background-color: $DarkGrayish;
         top: 50%;
         left: 50%;
@@ -72,40 +68,67 @@ $quote: 28px;
         border-radius:4%;
         display: block;
         text-align: center;
+        .adv{
+            color: $LightCyan;
+            font-size: $quote;
+            position: relative;
+            
+        }
         h3{
             background-color: $DarkGrayish;
             color: $NeonGreen;
             text-align: center;
             text-transform: uppercase;
+            font-size: 14px;
         }
-        .adv{
-            color: $LightCyan;
-            font-size: $quote;
-        }
+        
         .divider{
             
             left: 50%;
-            bottom: 70px;
+            bottom: 50px;
             transform: translate(-50%, -50%);
             margin: 0 auto;
             position: absolute;
         }
 }
+.attribution{
+    font-size: 10px;
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    color: aliceblue;
+}
+@media only screen and (min-width: 375px) {
+    .container{
+            position: fixed;
+            width: 375px;
+            height: 250px;
+            padding: 30px;
+            .adv{
+                top: 15%;
+            }
+        //   #divi{
+        //     width: 100%;
+        //     height: 100%;
+        //   }
+    }
+}
 
-@media only screen and (min-width: 500px) {
+@media only screen and (max-width: 375px) {
+    
     .container{
         position: fixed;
-            width: 200px;
-            height: 150px;
-            padding: 10px;
-            
-            svg{
-                width: 150px;
-                left: 50%;
-                bottom: 70px;
-                transform: translate(-50%, -50%);
-                margin: 0 auto;
-                position: absolute;
+            width: 340px;
+            height: 340px;
+            padding:30px 10px;
+            .adv{
+                top: 25%;
             }
+            // #divi{
+            //     width: 50%;
+            //     height: 90%;
+            //   }
     }
 }

@@ -41,10 +41,6 @@
 }
 
 .container {
-  position: fixed;
-  width: 500px;
-  height: 350px;
-  padding: 30px;
   background-color: hsl(217deg, 19%, 24%);
   top: 50%;
   left: 50%;
@@ -53,38 +49,56 @@
   display: block;
   text-align: center;
 }
+.container .adv {
+  color: hsl(193deg, 38%, 86%);
+  font-size: 28px;
+  position: relative;
+}
 .container h3 {
   background-color: hsl(217deg, 19%, 24%);
   color: hsl(150deg, 100%, 66%);
   text-align: center;
   text-transform: uppercase;
-}
-.container .adv {
-  color: hsl(193deg, 38%, 86%);
-  font-size: 28px;
+  font-size: 14px;
 }
 .container .divider {
   left: 50%;
-  bottom: 70px;
+  bottom: 50px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   position: absolute;
 }
 
-@media only screen and (min-width: 500px) {
+.attribution {
+  font-size: 10px;
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  color: aliceblue;
+}
+
+@media only screen and (min-width: 375px) {
   .container {
     position: fixed;
-    width: 200px;
-    height: 150px;
-    padding: 10px;
+    width: 375px;
+    height: 250px;
+    padding: 30px;
   }
-  .container svg {
-    width: 150px;
-    left: 50%;
-    bottom: 70px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    position: absolute;
+  .container .adv {
+    top: 15%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    position: fixed;
+    width: 340px;
+    height: 340px;
+    padding: 30px 10px;
+  }
+  .container .adv {
+    top: 25%;
   }
 }
 

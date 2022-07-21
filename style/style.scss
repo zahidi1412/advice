@@ -54,9 +54,9 @@ $quote: 28px;
     margin: 0 auto;
     transition: all 0.2s ease-in-out;
     :hover{
-        color: rgba(255, 255, 255, 1);
-        box-shadow:
-		inset 1px 1px 0px rgba(255,255,255,0.25);
+        color:hsl(150, 100%, 80%);
+        box-shadow: 0 0 20px  10px;
+		// inset 1px 1px 0px rgba(255,255,255,0.25);
         cursor: pointer;
     }
 }

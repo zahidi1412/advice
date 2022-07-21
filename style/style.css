@@ -35,8 +35,8 @@
   transition: all 0.2s ease-in-out;
 }
 .btn :hover {
-  color: rgb(255, 255, 255);
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.25);
+  color: hsl(150deg, 100%, 80%);
+  box-shadow: 0 0 20px 10px;
   cursor: pointer;
 }
 
